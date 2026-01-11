@@ -81,19 +81,19 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="relative px-8 py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section id="experience" className="relative px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-56 h-56 sm:w-80 sm:h-80 bg-pink-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400">Experience</span>
         </h2>
         
-        <p className="text-gray-400 mb-16 max-w-2xl mx-auto text-center text-lg">
+        <p className="text-gray-400 mb-10 sm:mb-12 md:mb-16 max-w-2xl mx-auto text-center text-base sm:text-lg px-4">
           Project-based engineering experience through hackathons, real-world problem solving, and technical leadership.
         </p>
 
@@ -102,10 +102,10 @@ export default function Experience() {
           {/* Animated Timeline Line */}
           <div 
             ref={timelineRef}
-            className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/0 via-purple-500/50 to-purple-500/0 timeline-line"
+            className="absolute left-4 sm:left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/0 via-purple-500/50 to-purple-500/0 timeline-line"
           ></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {experiences.map((exp, index) => {
               const Icon = exp.icon;
               const colorClasses = {
@@ -125,31 +125,31 @@ export default function Experience() {
                 <div
                   key={index}
                   ref={el => cardRefs.current[index] = el}
-                  className={`group relative ml-20 transition-all duration-700 opacity-100 translate-y-0`}
+                  className={`group relative ml-12 sm:ml-16 md:ml-20 transition-all duration-700 opacity-100 translate-y-0`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   {/* Timeline dot and connector */}
-                  <div className="absolute -left-[4.75rem] top-8 flex items-center">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 transform group-hover:scale-110 ${iconColorClasses[exp.color]}`}>
-                      <Icon className="text-xl transition-transform duration-500 group-hover:rotate-12" />
+                  <div className="absolute -left-[2.5rem] sm:-left-[3.5rem] md:-left-[4.75rem] top-6 sm:top-8 flex items-center">
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 transform group-hover:scale-110 ${iconColorClasses[exp.color]}`}>
+                      <Icon className="text-base sm:text-lg md:text-xl transition-transform duration-500 group-hover:rotate-12" />
                     </div>
-                    <div className={`w-6 h-0.5 bg-gradient-to-r from-${exp.color}-500/50 to-transparent`}></div>
+                    <div className={`w-4 sm:w-5 md:w-6 h-0.5 bg-gradient-to-r from-${exp.color}-500/50 to-transparent`}></div>
                   </div>
 
                   {/* Card */}
-                  <div className={`relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700 rounded-2xl transition-all duration-500 ${
+                  <div className={`relative overflow-hidden bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700 rounded-xl sm:rounded-2xl transition-all duration-500 ${
                     hoveredCard === index 
                       ? `border-${exp.color}-500 shadow-xl -translate-y-2 ${colorClasses[exp.color]}` 
                       : ''
                   }`}>
                     {/* Gradient overlay on hover */}
-                    <div className={`absolute inset-0 bg-gradient-to-br from-${exp.color}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br from-${exp.color}-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl sm:rounded-2xl pointer-events-none`}></div>
                     
                     {/* Main content area */}
-                    <div className={`relative z-10 p-8 transition-all duration-500 ${hoveredCard === index ? 'pb-4' : ''}`}>
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                    <div className={`relative z-10 p-4 sm:p-6 md:p-8 transition-all duration-500 ${hoveredCard === index ? 'pb-2 sm:pb-3 md:pb-4' : ''}`}>
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
                         {exp.title}
                       </h3>
 
@@ -166,9 +166,9 @@ export default function Experience() {
 
                       {/* Description with expand/collapse */}
                       <div className={`overflow-hidden transition-all duration-500 ${
-                        hoveredCard === index ? 'max-h-96' : 'max-h-24'
+                        hoveredCard === index ? 'max-h-96' : 'max-h-20 sm:max-h-24'
                       }`}>
-                        <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300 transition-colors duration-300">
+                        <p className="text-gray-400 leading-relaxed text-sm sm:text-base group-hover:text-gray-300 transition-colors duration-300">
                           {hoveredCard === index ? exp.description : exp.shortDescription}
                         </p>
                       </div>
@@ -181,19 +181,19 @@ export default function Experience() {
                           ? 'max-h-96 opacity-100 translate-y-0' 
                           : 'max-h-0 opacity-0 translate-y-4'
                       }`}>
-                        <div className="p-6">
+                        <div className="p-4 sm:p-5 md:p-6">
                           <div className="flex items-center gap-2 mb-3">
                             <div className={`w-2 h-2 bg-${exp.color}-400 rounded-full animate-pulse`}></div>
-                            <p className={`text-${exp.color}-400 font-semibold text-sm uppercase tracking-wider`}>Certificate</p>
+                            <p className={`text-${exp.color}-400 font-semibold text-xs sm:text-sm uppercase tracking-wider`}>Certificate</p>
                           </div>
                           <div 
-                            className="relative group/cert rounded-lg overflow-hidden border border-gray-700 hover:border-${exp.color}-500 transition-all duration-300 cursor-pointer w-64"
+                            className="relative group/cert rounded-lg overflow-hidden border border-gray-700 hover:border-${exp.color}-500 transition-all duration-300 cursor-pointer w-full sm:w-64 mx-auto sm:mx-0"
                             onClick={() => setModalImage(exp.certificate)}
                           >
                             <img 
                               src={exp.certificate} 
                               alt={`${exp.title} Certificate`}
-                              className="w-full h-32 object-contain group-hover/cert:scale-105 transition-transform duration-500"
+                              className="w-full h-28 sm:h-32 object-contain group-hover/cert:scale-105 transition-transform duration-500"
                               onError={(e) => {
                                 e.target.parentElement.innerHTML = `<div class="w-full h-32 flex items-center justify-center text-gray-500"><span>Certificate Image</span></div>`;
                               }}
@@ -216,21 +216,21 @@ export default function Experience() {
       {/* Certificate Modal */}
       {modalImage && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg p-4 md:p-8 animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-lg p-4 sm:p-6 md:p-8 animate-fade-in"
           onClick={() => setModalImage(null)}
         >
           <div className="relative max-w-5xl w-full">
             {/* Close Button - Fixed Top Right */}
             <button
               onClick={() => setModalImage(null)}
-              className="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center rounded-full bg-gray-700/80 hover:bg-purple-600 backdrop-blur-sm text-white text-2xl transition-all duration-300 hover:rotate-90 shadow-lg border border-gray-600"
+              className="absolute -top-10 sm:-top-12 right-0 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-gray-700/80 hover:bg-purple-600 backdrop-blur-sm text-white text-xl sm:text-2xl transition-all duration-300 hover:rotate-90 shadow-lg border border-gray-600"
               aria-label="Close modal"
             >
               ×
             </button>
             
             {/* Certificate Container */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-700 max-h-[85vh] overflow-auto">
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl border border-gray-700 max-h-[85vh] overflow-auto">
               <img 
                 src={modalImage}
                 alt="Certificate Full View"

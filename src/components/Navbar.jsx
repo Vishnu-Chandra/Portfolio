@@ -54,10 +54,10 @@ export default function Navbar() {
         ? 'bg-gray-950/95 backdrop-blur-lg border-gray-800 shadow-lg' 
         : 'bg-gray-950/80 backdrop-blur-sm border-gray-800/50'
     }`}>
-      <div className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 flex justify-between items-center">
 
         {/* Logo / Name */}
-        <a href="#home" className="group text-2xl font-bold tracking-tight transition-all duration-300">
+        <a href="#home" className="group text-xl sm:text-2xl font-bold tracking-tight transition-all duration-300">
           <span className="font-serif italic bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent group-hover:from-purple-400 group-hover:via-pink-400 group-hover:to-purple-400 transition-all duration-300">
             Vishnu
           </span>
@@ -106,7 +106,7 @@ export default function Navbar() {
       <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
         open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
-        <div className="bg-gray-900/95 backdrop-blur-lg border-t border-gray-800 px-6 py-4 space-y-4">
+        <div className="bg-gray-900/95 backdrop-blur-lg border-t border-gray-800 px-4 sm:px-6 py-3 sm:py-4 space-y-2 sm:space-y-3">
           {navLinks.map((link) => {
             const sectionId = link.href.substring(1);
             const isActive = activeSection === sectionId;

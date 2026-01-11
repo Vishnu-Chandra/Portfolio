@@ -61,27 +61,9 @@ AI CLI Assistant is an interactive, AI-powered command-line tool that translates
     github: "https://github.com/yourusername/ai-cli",
     pypi: "https://pypi.org/project/ai-cli-llm/"
   },
+
   {
     id: 4,
-    title: "FocusTab",
-    image: "/projects/FocusTab_mainPage.png",
-    tech: ["React", "Vite", "Web APIs", "LocalStorage"],
-    short:
-      "A productivity-focused browser extension with Pomodoro, Todo, and daily quotes.",
-    full: `
-FocusTab is a lightweight productivity dashboard that replaces the browser new
-tab page. It includes a configurable Pomodoro timer, floating todo list, daily
-quotes, and randomized backgrounds.
-
-The extension persists state using LocalStorage, supports keyboard shortcuts,
-and uses the Web Notifications API for session alerts. Designed for accessibility
-and focus, it works as an unpacked Microsoft Edge extension.
-    `,
-    github: "https://github.com/Vishnu-Chandra/FocusTab-Browser-Extension",
-  },
-
-  {
-    id: 5,
     title: "SlotSwapper",
     image: "/projects/SlotSwapper_mainPage.png",
     tech: ["React", "Express", "MongoDB", "JWT", "Bootstrap"],
@@ -100,9 +82,25 @@ flows.
     live: "https://slot-swapper-tawny.vercel.app/"
   },
 
-  
+  {
+    id: 5,
+    title: "FocusTab",
+    image: "/projects/FocusTab_mainPage.png",
+    tech: ["React", "Vite", "Web APIs", "LocalStorage"],
+    short:
+      "A productivity-focused browser extension with Pomodoro, Todo, and daily quotes.",
+    full: `
+FocusTab is a lightweight productivity dashboard that replaces the browser new
+tab page. It includes a configurable Pomodoro timer, floating todo list, daily
+quotes, and randomized backgrounds.
 
-  
+The extension persists state using LocalStorage, supports keyboard shortcuts,
+and uses the Web Notifications API for session alerts. Designed for accessibility
+and focus, it works as an unpacked Microsoft Edge extension.
+    `,
+    github: "https://github.com/Vishnu-Chandra/FocusTab-Browser-Extension",
+  },
+
 
   {
     id: 6,
@@ -155,20 +153,20 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="px-8 pt-20 pb-32 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-800 relative">
+    <section id="projects" className="px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 pb-24 sm:pb-32 bg-gradient-to-b from-gray-900 via-gray-850 to-gray-800 relative">
       {/* Bottom decorative separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
       
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 sm:mb-14 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400">Projects</span>
           </h2>
-          <p className="text-gray-400 text-lg">Building solutions that make a difference</p>
+          <p className="text-gray-400 text-base sm:text-lg">Building solutions that make a difference</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {projects.map((project, index) => {
             const isVisible = visibleCards.includes(index);
             
@@ -187,7 +185,7 @@ export default function Projects() {
                 <div className="relative h-full bg-gray-800 rounded-xl overflow-hidden border border-gray-700 transition-all duration-300 hover:border-purple-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20">
                   
                   {/* Image container with zoom effect */}
-                  <div className="relative h-56 overflow-hidden bg-gray-900">
+                  <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden bg-gray-900">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -201,19 +199,19 @@ export default function Projects() {
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     {/* View Details badge */}
-                    <div className="absolute bottom-3 right-3 px-3 py-1.5 bg-purple-600 rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                      <span className="text-xs font-semibold text-white">View Details →</span>
+                    <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 px-2 sm:px-3 py-1 sm:py-1.5 bg-purple-600 rounded-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      <span className="text-[10px] sm:text-xs font-semibold text-white">View Details →</span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-4 sm:p-5 md:p-6">
                     {/* Tech badges */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                       {project.tech.map((t, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2.5 py-1 bg-purple-600/20 text-purple-300 rounded-md border border-purple-500/30 font-medium transition-colors duration-300 group-hover:bg-purple-600/30 group-hover:border-purple-500/50"
+                          className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 bg-purple-600/20 text-purple-300 rounded-md border border-purple-500/30 font-medium transition-colors duration-300 group-hover:bg-purple-600/30 group-hover:border-purple-500/50"
                         >
                           {t}
                         </span>
@@ -221,12 +219,12 @@ export default function Projects() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors duration-300">
                       {project.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-300">
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 group-hover:text-gray-300 transition-colors duration-300">
                       {project.short}
                     </p>
                   </div>

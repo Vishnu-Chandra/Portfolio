@@ -32,23 +32,23 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-8 py-20 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900 relative overflow-hidden">
+    <section id="contact" className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400">Get In Touch</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Feel free to reach out for collaboration, opportunities, or any questions.
             I'll get back to you as soon as possible.
           </p>
         </div>
 
-        <div className="bg-gray-800/40 backdrop-blur-md border border-gray-700/50 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-gray-800/40 backdrop-blur-md border border-gray-700/50 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl">
           {/* Success/Error Message */}
           {status === "success" && (
             <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex items-center gap-3 animate-fade-in">
@@ -72,9 +72,9 @@ export default function Contact() {
             action="https://formspree.io/f/xjgvozjl"
             method="POST"
             onSubmit={handleSubmit}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-5 md:space-y-6"
           >
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               {/* Name */}
               <div className="group">
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -85,7 +85,7 @@ export default function Contact() {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                  className="w-full p-3 sm:p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 text-sm sm:text-base"
                 />
               </div>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                   name="email"
                   placeholder="your.email@example.com"
                   required
-                  className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                  className="w-full p-3 sm:p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                 name="subject"
                 placeholder="What's this about?"
                 required
-                className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500"
+                className="w-full p-3 sm:p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 text-sm sm:text-base"
               />
             </div>
 
@@ -125,16 +125,16 @@ export default function Contact() {
               </label>
               <textarea
                 name="message"
-                rows="6"
+                rows="5"
                 placeholder="Tell me more..."
                 required
-                className="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 resize-none"
+                className="w-full p-3 sm:p-4 bg-gray-900/50 border border-gray-600 rounded-lg focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 text-white placeholder-gray-500 resize-none text-sm sm:text-base"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transform hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40"
+              className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transform hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 text-sm sm:text-base"
             >
               Send Message
             </button>
